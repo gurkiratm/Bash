@@ -1,0 +1,15 @@
+[Unit]
+Description=remote port forwarding from windows IOT VM
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+#Type=simple
+ExecStart=<Path to the Script>/remote_forward_service.sh
+Restart=always
+#RestartSec=5s
+User=root
+WorkingDirectory=<Path to the Script>
+
+[Install]
+WantedBy=multi-user.target
